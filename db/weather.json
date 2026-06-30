@@ -1,0 +1,77 @@
+{
+  "location": {
+    "name": "Nellore, Andhra Pradesh",
+    "lat": 14.4426,
+    "lon": 79.9865,
+    "elevation": 20
+  },
+  "current": {
+    "temperature": 32,
+    "feels_like": 36,
+    "humidity": 72,
+    "rainfall": 12.5,
+    "wind_speed": 14,
+    "wind_direction": "SW",
+    "soil_moisture": 58,
+    "pressure": 1006,
+    "uv_index": 7,
+    "visibility": 8,
+    "condition": "Partly Cloudy",
+    "condition_code": "partly_cloudy",
+    "last_updated": "2026-06-30T16:00:00"
+  },
+  "history": [
+    { "date": "2026-06-01", "temp_max": 42, "temp_min": 28, "humidity": 35, "rainfall": 0, "wind_speed": 12, "soil_moisture": 22, "condition": "Sunny" },
+    { "date": "2026-06-02", "temp_max": 43, "temp_min": 29, "humidity": 32, "rainfall": 0, "wind_speed": 15, "soil_moisture": 20, "condition": "Sunny" },
+    { "date": "2026-06-03", "temp_max": 41, "temp_min": 28, "humidity": 40, "rainfall": 0, "wind_speed": 10, "soil_moisture": 19, "condition": "Haze" },
+    { "date": "2026-06-04", "temp_max": 40, "temp_min": 27, "humidity": 45, "rainfall": 2.5, "wind_speed": 18, "soil_moisture": 23, "condition": "Partly Cloudy" },
+    { "date": "2026-06-05", "temp_max": 39, "temp_min": 27, "humidity": 48, "rainfall": 5, "wind_speed": 20, "soil_moisture": 28, "condition": "Cloudy" },
+    { "date": "2026-06-06", "temp_max": 37, "temp_min": 26, "humidity": 55, "rainfall": 15, "wind_speed": 22, "soil_moisture": 35, "condition": "Light Rain" },
+    { "date": "2026-06-07", "temp_max": 34, "temp_min": 25, "humidity": 68, "rainfall": 32, "wind_speed": 25, "soil_moisture": 45, "condition": "Rain" },
+    { "date": "2026-06-08", "temp_max": 32, "temp_min": 24, "humidity": 75, "rainfall": 45, "wind_speed": 28, "soil_moisture": 55, "condition": "Heavy Rain" },
+    { "date": "2026-06-09", "temp_max": 30, "temp_min": 24, "humidity": 82, "rainfall": 58, "wind_speed": 30, "soil_moisture": 65, "condition": "Thunderstorm" },
+    { "date": "2026-06-10", "temp_max": 31, "temp_min": 24, "humidity": 78, "rainfall": 28, "wind_speed": 18, "soil_moisture": 62, "condition": "Rain" },
+    { "date": "2026-06-11", "temp_max": 33, "temp_min": 25, "humidity": 70, "rainfall": 8, "wind_speed": 14, "soil_moisture": 55, "condition": "Partly Cloudy" },
+    { "date": "2026-06-12", "temp_max": 35, "temp_min": 26, "humidity": 62, "rainfall": 3, "wind_speed": 10, "soil_moisture": 48, "condition": "Cloudy" },
+    { "date": "2026-06-13", "temp_max": 36, "temp_min": 26, "humidity": 58, "rainfall": 0, "wind_speed": 8, "soil_moisture": 42, "condition": "Partly Cloudy" },
+    { "date": "2026-06-14", "temp_max": 37, "temp_min": 27, "humidity": 55, "rainfall": 0, "wind_speed": 11, "soil_moisture": 38, "condition": "Sunny" },
+    { "date": "2026-06-15", "temp_max": 36, "temp_min": 26, "humidity": 60, "rainfall": 10, "wind_speed": 16, "soil_moisture": 42, "condition": "Light Rain" },
+    { "date": "2026-06-16", "temp_max": 33, "temp_min": 25, "humidity": 72, "rainfall": 35, "wind_speed": 22, "soil_moisture": 52, "condition": "Rain" },
+    { "date": "2026-06-17", "temp_max": 31, "temp_min": 24, "humidity": 80, "rainfall": 48, "wind_speed": 26, "soil_moisture": 62, "condition": "Heavy Rain" },
+    { "date": "2026-06-18", "temp_max": 30, "temp_min": 23, "humidity": 85, "rainfall": 55, "wind_speed": 32, "soil_moisture": 70, "condition": "Thunderstorm" },
+    { "date": "2026-06-19", "temp_max": 31, "temp_min": 24, "humidity": 78, "rainfall": 22, "wind_speed": 20, "soil_moisture": 68, "condition": "Rain" },
+    { "date": "2026-06-20", "temp_max": 32, "temp_min": 25, "humidity": 72, "rainfall": 12, "wind_speed": 15, "soil_moisture": 60, "condition": "Partly Cloudy" },
+    { "date": "2026-06-21", "temp_max": 34, "temp_min": 26, "humidity": 65, "rainfall": 5, "wind_speed": 12, "soil_moisture": 52, "condition": "Cloudy" },
+    { "date": "2026-06-22", "temp_max": 35, "temp_min": 26, "humidity": 60, "rainfall": 0, "wind_speed": 9, "soil_moisture": 45, "condition": "Partly Cloudy" },
+    { "date": "2026-06-23", "temp_max": 34, "temp_min": 25, "humidity": 65, "rainfall": 8, "wind_speed": 14, "soil_moisture": 48, "condition": "Light Rain" },
+    { "date": "2026-06-24", "temp_max": 32, "temp_min": 25, "humidity": 75, "rainfall": 28, "wind_speed": 20, "soil_moisture": 58, "condition": "Rain" },
+    { "date": "2026-06-25", "temp_max": 30, "temp_min": 24, "humidity": 82, "rainfall": 42, "wind_speed": 28, "soil_moisture": 68, "condition": "Heavy Rain" },
+    { "date": "2026-06-26", "temp_max": 31, "temp_min": 24, "humidity": 80, "rainfall": 35, "wind_speed": 24, "soil_moisture": 72, "condition": "Rain" },
+    { "date": "2026-06-27", "temp_max": 33, "temp_min": 25, "humidity": 74, "rainfall": 15, "wind_speed": 16, "soil_moisture": 65, "condition": "Cloudy" },
+    { "date": "2026-06-28", "temp_max": 34, "temp_min": 26, "humidity": 68, "rainfall": 5, "wind_speed": 12, "soil_moisture": 58, "condition": "Partly Cloudy" },
+    { "date": "2026-06-29", "temp_max": 33, "temp_min": 25, "humidity": 70, "rainfall": 10, "wind_speed": 14, "soil_moisture": 55, "condition": "Light Rain" },
+    { "date": "2026-06-30", "temp_max": 32, "temp_min": 25, "humidity": 72, "rainfall": 12, "wind_speed": 14, "soil_moisture": 58, "condition": "Partly Cloudy" }
+  ],
+  "alerts": [
+    {
+      "id": "alert_001",
+      "type": "heavy_rain",
+      "severity": "warning",
+      "title": "Heavy Rainfall Warning",
+      "message": "IMD has issued a heavy rainfall warning for the next 48 hours. Expected rainfall: 50-80mm. Farmers advised to secure harvested crops and ensure proper drainage.",
+      "issued": "2026-06-30T10:00:00",
+      "expires": "2026-07-02T10:00:00",
+      "active": true
+    },
+    {
+      "id": "alert_002",
+      "type": "flood",
+      "severity": "watch",
+      "title": "Flood Watch",
+      "message": "Rising water levels in Narmada tributaries. Low-lying agricultural fields may experience waterlogging. Monitor water levels regularly.",
+      "issued": "2026-06-30T12:00:00",
+      "expires": "2026-07-01T18:00:00",
+      "active": true
+    }
+  ]
+}

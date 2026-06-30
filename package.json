@@ -1,0 +1,16 @@
+{
+  "name": "smart-weather-crop",
+  "version": "1.0.0",
+  "description": "Smart Weather Advisory & Crop Forecasting System using simulated CNN",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["weather", "crop", "forecasting", "cnn", "agriculture"],
+  "author": "AgriSense",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

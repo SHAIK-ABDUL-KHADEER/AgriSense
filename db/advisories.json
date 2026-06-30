@@ -1,0 +1,121 @@
+{
+  "templates": [
+    {
+      "id": "adv_irr_001",
+      "category": "irrigation",
+      "icon": "💧",
+      "title": "Reduce Irrigation — Rain Expected",
+      "message": "Heavy rainfall is forecasted in the next 48 hours. Reduce or stop irrigation to prevent waterlogging. Ensure field drainage channels are clear.",
+      "priority": "warning",
+      "conditions": { "rainfall_above": 30, "soil_moisture_above": 50 }
+    },
+    {
+      "id": "adv_irr_002",
+      "category": "irrigation",
+      "icon": "💧",
+      "title": "Increase Irrigation — Dry Spell",
+      "message": "No significant rainfall expected for the next 5 days. Soil moisture is declining. Schedule irrigation, preferably during early morning or late evening to minimize evaporation losses.",
+      "priority": "critical",
+      "conditions": { "rainfall_below": 5, "soil_moisture_below": 35 }
+    },
+    {
+      "id": "adv_irr_003",
+      "category": "irrigation",
+      "icon": "💧",
+      "title": "Optimal Soil Moisture",
+      "message": "Current soil moisture levels are within the optimal range. Maintain current irrigation schedule. Monitor for the next 3 days.",
+      "priority": "info",
+      "conditions": { "soil_moisture_min": 40, "soil_moisture_max": 65 }
+    },
+    {
+      "id": "adv_pest_001",
+      "category": "pest_control",
+      "icon": "🐛",
+      "title": "High Pest Risk — Humid Conditions",
+      "message": "High humidity and warm temperatures create favorable conditions for pest infestations (aphids, whiteflies, bollworms). Apply recommended pesticide spray. Use neem-based organic pesticides for eco-friendly control.",
+      "priority": "critical",
+      "conditions": { "humidity_above": 75, "temp_above": 28 }
+    },
+    {
+      "id": "adv_pest_002",
+      "category": "pest_control",
+      "icon": "🐛",
+      "title": "Fungal Disease Alert",
+      "message": "Prolonged wet conditions increase risk of fungal diseases (rust, blight, mildew). Apply fungicide treatment and ensure proper crop spacing for air circulation.",
+      "priority": "warning",
+      "conditions": { "humidity_above": 80, "rainfall_above": 20 }
+    },
+    {
+      "id": "adv_sow_001",
+      "category": "sowing",
+      "icon": "🌱",
+      "title": "Ideal Sowing Window",
+      "message": "Monsoon onset confirmed with adequate soil moisture. This is the ideal window for sowing Kharif crops (Rice, Soybean, Corn). Prepare seedbeds and ensure seed treatment before sowing.",
+      "priority": "critical",
+      "conditions": { "soil_moisture_above": 45, "rainfall_above": 15, "month_in": [6, 7] }
+    },
+    {
+      "id": "adv_sow_002",
+      "category": "sowing",
+      "icon": "🌱",
+      "title": "Delay Sowing — Insufficient Moisture",
+      "message": "Soil moisture is below optimal levels for germination. Wait for adequate rainfall before sowing to ensure good seed-soil contact and germination rates.",
+      "priority": "warning",
+      "conditions": { "soil_moisture_below": 30, "month_in": [6, 7] }
+    },
+    {
+      "id": "adv_harv_001",
+      "category": "harvesting",
+      "icon": "🚜",
+      "title": "Harvest Before Rain",
+      "message": "If crops are at maturity stage, prioritize harvesting immediately. Heavy rain forecast can cause post-harvest losses including grain sprouting and quality deterioration.",
+      "priority": "critical",
+      "conditions": { "rainfall_forecast_above": 40, "month_in": [9, 10, 11, 3, 4] }
+    },
+    {
+      "id": "adv_harv_002",
+      "category": "harvesting",
+      "icon": "🚜",
+      "title": "Good Harvesting Conditions",
+      "message": "Dry weather with moderate temperatures is ideal for harvesting and post-harvest drying. Proceed with harvest operations and ensure proper drying of grains to <14% moisture.",
+      "priority": "info",
+      "conditions": { "rainfall_below": 5, "humidity_below": 60 }
+    },
+    {
+      "id": "adv_wx_001",
+      "category": "weather_alert",
+      "icon": "⛈️",
+      "title": "Thunderstorm Warning",
+      "message": "Severe thunderstorms with strong winds (>50 km/h) and hail possible. Secure farm equipment, livestock shelters, and greenhouse structures. Avoid outdoor farm operations.",
+      "priority": "critical",
+      "conditions": { "wind_above": 40, "rainfall_above": 50 }
+    },
+    {
+      "id": "adv_wx_002",
+      "category": "weather_alert",
+      "icon": "🌡️",
+      "title": "Heat Stress Advisory",
+      "message": "Maximum temperatures exceeding 40°C expected. Provide shade and additional water for livestock. Young crop transplants may need shade nets. Avoid field work during peak hours (11AM-3PM).",
+      "priority": "warning",
+      "conditions": { "temp_above": 40, "humidity_below": 40 }
+    },
+    {
+      "id": "adv_soil_001",
+      "category": "soil_management",
+      "icon": "🌍",
+      "title": "Apply Mulching",
+      "message": "High soil temperature and decreasing moisture detected. Apply organic mulch (straw, dried leaves) around crop bases to conserve soil moisture and regulate root zone temperature.",
+      "priority": "info",
+      "conditions": { "temp_above": 35, "soil_moisture_below": 40 }
+    },
+    {
+      "id": "adv_fert_001",
+      "category": "fertilizer",
+      "icon": "🧪",
+      "title": "Top-Dressing Fertilizer Application",
+      "message": "Adequate soil moisture and moderate conditions are suitable for fertilizer top-dressing. Apply nitrogen fertilizer (urea) in split doses. Avoid application before heavy rain to prevent nutrient leaching.",
+      "priority": "info",
+      "conditions": { "soil_moisture_min": 40, "soil_moisture_max": 70, "rainfall_below": 20 }
+    }
+  ]
+}

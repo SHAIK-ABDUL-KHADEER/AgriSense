@@ -1,0 +1,160 @@
+{
+  "crops": [
+    {
+      "id": "rice",
+      "name": "Rice",
+      "emoji": "🌾",
+      "category": "Cereal",
+      "season": "Kharif",
+      "sowing_months": ["June", "July"],
+      "harvest_months": ["October", "November"],
+      "growth_duration_days": 120,
+      "water_requirement": "High",
+      "description": "Staple food crop requiring warm temperatures and abundant water. Thrives in monsoon conditions with standing water in paddy fields.",
+      "optimal": {
+        "temp_min": 20, "temp_max": 37,
+        "humidity_min": 60, "humidity_max": 95,
+        "rainfall_min": 100, "rainfall_max": 300,
+        "wind_max": 30,
+        "soil_moisture_min": 50, "soil_moisture_max": 90
+      },
+      "yield_range": { "min": 2.5, "max": 7.5, "unit": "tons/hectare" },
+      "cnn_weights": {
+        "kernel": [0.35, 0.82, 0.75],
+        "conv_bias": 0.08,
+        "dense_weights": [0.72, 0.58],
+        "dense_bias": 0.12
+      }
+    },
+    {
+      "id": "wheat",
+      "name": "Wheat",
+      "emoji": "🌿",
+      "category": "Cereal",
+      "season": "Rabi",
+      "sowing_months": ["October", "November"],
+      "harvest_months": ["March", "April"],
+      "growth_duration_days": 140,
+      "water_requirement": "Medium",
+      "description": "Cool-season cereal crop. Prefers moderate temperatures and well-distributed rainfall. Sensitive to waterlogging and excessive heat.",
+      "optimal": {
+        "temp_min": 10, "temp_max": 25,
+        "humidity_min": 40, "humidity_max": 70,
+        "rainfall_min": 40, "rainfall_max": 110,
+        "wind_max": 25,
+        "soil_moisture_min": 30, "soil_moisture_max": 60
+      },
+      "yield_range": { "min": 2.0, "max": 6.0, "unit": "tons/hectare" },
+      "cnn_weights": {
+        "kernel": [0.70, 0.30, 0.45],
+        "conv_bias": 0.15,
+        "dense_weights": [0.55, 0.68],
+        "dense_bias": 0.20
+      }
+    },
+    {
+      "id": "corn",
+      "name": "Corn (Maize)",
+      "emoji": "🌽",
+      "category": "Cereal",
+      "season": "Kharif",
+      "sowing_months": ["June", "July"],
+      "harvest_months": ["September", "October"],
+      "growth_duration_days": 100,
+      "water_requirement": "Medium-High",
+      "description": "Versatile warm-season crop used for food, feed, and industrial purposes. Requires good sunlight and moderate rainfall with well-drained soils.",
+      "optimal": {
+        "temp_min": 21, "temp_max": 35,
+        "humidity_min": 50, "humidity_max": 80,
+        "rainfall_min": 60, "rainfall_max": 200,
+        "wind_max": 35,
+        "soil_moisture_min": 40, "soil_moisture_max": 70
+      },
+      "yield_range": { "min": 3.0, "max": 9.0, "unit": "tons/hectare" },
+      "cnn_weights": {
+        "kernel": [0.55, 0.60, 0.50],
+        "conv_bias": 0.10,
+        "dense_weights": [0.65, 0.60],
+        "dense_bias": 0.18
+      }
+    },
+    {
+      "id": "sugarcane",
+      "name": "Sugarcane",
+      "emoji": "🎋",
+      "category": "Cash Crop",
+      "season": "Annual",
+      "sowing_months": ["February", "March"],
+      "harvest_months": ["January", "February"],
+      "growth_duration_days": 360,
+      "water_requirement": "Very High",
+      "description": "Tropical cash crop requiring hot, humid climate with abundant water. Long growing season with high water and nutrient demands.",
+      "optimal": {
+        "temp_min": 25, "temp_max": 40,
+        "humidity_min": 65, "humidity_max": 95,
+        "rainfall_min": 150, "rainfall_max": 350,
+        "wind_max": 25,
+        "soil_moisture_min": 55, "soil_moisture_max": 85
+      },
+      "yield_range": { "min": 40, "max": 100, "unit": "tons/hectare" },
+      "cnn_weights": {
+        "kernel": [0.40, 0.78, 0.85],
+        "conv_bias": 0.05,
+        "dense_weights": [0.75, 0.70],
+        "dense_bias": 0.10
+      }
+    },
+    {
+      "id": "cotton",
+      "name": "Cotton",
+      "emoji": "☁️",
+      "category": "Cash Crop",
+      "season": "Kharif",
+      "sowing_months": ["April", "May"],
+      "harvest_months": ["October", "December"],
+      "growth_duration_days": 180,
+      "water_requirement": "Medium",
+      "description": "Important fibre crop preferring warm, dry climate for boll opening. Moderate water needs with sensitivity to excess moisture during harvest.",
+      "optimal": {
+        "temp_min": 22, "temp_max": 38,
+        "humidity_min": 40, "humidity_max": 70,
+        "rainfall_min": 50, "rainfall_max": 150,
+        "wind_max": 20,
+        "soil_moisture_min": 35, "soil_moisture_max": 60
+      },
+      "yield_range": { "min": 1.0, "max": 3.5, "unit": "tons/hectare" },
+      "cnn_weights": {
+        "kernel": [0.62, 0.40, 0.35],
+        "conv_bias": 0.12,
+        "dense_weights": [0.58, 0.48],
+        "dense_bias": 0.22
+      }
+    },
+    {
+      "id": "soybean",
+      "name": "Soybean",
+      "emoji": "🫘",
+      "category": "Oilseed",
+      "season": "Kharif",
+      "sowing_months": ["June", "July"],
+      "harvest_months": ["September", "October"],
+      "growth_duration_days": 95,
+      "water_requirement": "Medium",
+      "description": "Major oilseed crop of central India. Prefers warm temperatures with well-distributed rainfall. Sensitive to waterlogging and drought stress.",
+      "optimal": {
+        "temp_min": 20, "temp_max": 33,
+        "humidity_min": 55, "humidity_max": 80,
+        "rainfall_min": 60, "rainfall_max": 180,
+        "wind_max": 25,
+        "soil_moisture_min": 40, "soil_moisture_max": 70
+      },
+      "yield_range": { "min": 1.0, "max": 3.5, "unit": "tons/hectare" },
+      "cnn_weights": {
+        "kernel": [0.52, 0.65, 0.58],
+        "conv_bias": 0.10,
+        "dense_weights": [0.62, 0.55],
+        "dense_bias": 0.16
+      }
+    }
+  ]
+}
