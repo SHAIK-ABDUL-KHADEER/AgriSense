@@ -176,6 +176,7 @@
       margin-left: 260px;
       padding: 32px;
       min-height: 100vh;
+      min-width: 0;
     }
 
     .page-header {
@@ -325,7 +326,7 @@
     /* Stats Grid */
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 16px;
       margin-bottom: 24px;
     }
@@ -465,9 +466,11 @@
     /* ═══════════════════════════════════════════════════════════ */
     .crops-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 16px;
       margin-bottom: 32px;
+      width: 100%;
+      max-width: 100%;
     }
 
     .crop-card {
@@ -828,16 +831,13 @@
     /*  RESPONSIVE                                                */
     /* ═══════════════════════════════════════════════════════════ */
     @media (max-width: 1200px) {
-      .crops-grid { grid-template-columns: repeat(2, 1fr); }
       .prediction-grid { grid-template-columns: 1fr 1fr; }
       .prediction-risk { grid-column: 1 / -1; }
     }
 
     @media (max-width: 900px) {
       .sidebar { display: none; }
-      .main-content { margin-left: 0; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .forecast-grid { grid-template-columns: repeat(4, 1fr); }
+      .main-content { margin-left: 0; padding: 24px; }
       .charts-grid { grid-template-columns: 1fr; }
     }
 
@@ -845,9 +845,47 @@
       .main-content { padding: 16px; }
       .weather-hero { flex-direction: column; text-align: center; gap: 20px; padding: 24px; }
       .weather-hero-right { align-items: center; }
-      .forecast-grid { grid-template-columns: repeat(3, 1fr); }
-      .crops-grid { grid-template-columns: 1fr; }
+      
+      /* Mobile Horizontal Scroll for Forecast */
+      .forecast-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 12px;
+        padding: 4px;
+        margin-bottom: 24px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .forecast-card {
+        flex: 0 0 110px;
+        scroll-snap-align: start;
+      }
+
       .prediction-grid { grid-template-columns: 1fr; }
+      .crop-filter-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .crop-filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .crop-filters .filter-item-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .crop-filters select {
+        width: 100%;
+        max-width: none;
+        flex: 1;
+      }
+      #average-risk-badge {
+        justify-content: center;
+        width: 100%;
+      }
     }
 
     /* Mobile nav toggle */
@@ -972,6 +1010,86 @@
       gap: 6px;
     }
 
+    /* Crop Filters */
+    .crop-filter-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .crop-filters {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .crop-filters .filter-item-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .crop-filters .filter-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .crop-filters select {
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xs);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      outline: none;
+      min-width: 140px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238892a4' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 30px;
+    }
+
+    .crop-filters select:hover {
+      border-color: rgba(6, 214, 160, 0.4);
+      background-color: rgba(255, 255, 255, 0.09);
+    }
+
+    .crop-filters select:focus {
+      border-color: var(--accent-teal);
+      box-shadow: 0 0 0 2px rgba(6, 214, 160, 0.15);
+    }
+
+    .crop-filters select option {
+      background: #1a2035;
+      color: #f0f4f8;
+      padding: 8px;
+    }
+
+    #average-risk-badge {
+      padding: 6px 14px;
+      background: rgba(6, 214, 160, 0.1);
+      border: 1px solid rgba(6, 214, 160, 0.2);
+      border-radius: 20px;
+      color: var(--accent-teal);
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
     /* ═══════════════════════════════════════════════════════════ */
     /*  SCROLLBAR                                                 */
     /* ═══════════════════════════════════════════════════════════ */
@@ -1084,6 +1202,34 @@
           <p>CNN-powered yield forecasting based on current weather conditions</p>
         </div>
 
+        <div class="crop-filter-row">
+          <div class="crop-filters">
+            <div class="filter-item-wrap">
+              <span class="filter-label">Season:</span>
+              <select id="season-filter-select">
+                <option value="all">All Seasons</option>
+                <option value="Kharif">Kharif</option>
+                <option value="Rabi">Rabi</option>
+                <option value="Zaid">Zaid</option>
+                <option value="Annual">Annual</option>
+              </select>
+            </div>
+            <div class="filter-item-wrap">
+              <span class="filter-label">Risk Level:</span>
+              <select id="risk-filter-select">
+                <option value="all">All Risks</option>
+                <option value="low">Low Risk</option>
+                <option value="moderate">Moderate Risk</option>
+                <option value="high">High Risk</option>
+                <option value="critical">Critical Risk</option>
+              </select>
+            </div>
+          </div>
+          <div id="average-risk-badge">
+            ⚠️ Avg Risk: <span id="avg-risk-value">0%</span>
+          </div>
+        </div>
+
         <div class="card-title">Select a Crop</div>
         <div id="crops-container" class="crops-grid">
           <div class="loader"><div class="loader-spinner"></div></div>
@@ -1155,7 +1301,9 @@
       advisoryFilter: 'all',
       chartsRendered: { forecast: false, analytics: false },
       locationData: null,
-      selectedLocationId: 'nellore'
+      selectedLocationId: 'nellore',
+      seasonFilter: 'all',
+      riskFilter: 'all'
     };
 
     // ── Weather Condition Icons ──────────────────────────────
@@ -1280,6 +1428,7 @@
           // Reset chart caches so they re-render with new location data
           state.chartsRendered = { forecast: false, analytics: false };
           state.advisories = [];
+          state.crops = [];
           state.selectedCrop = null;
 
           // Refresh dashboard
@@ -1486,7 +1635,28 @@
     // ══════════════════════════════════════════════════════════
     async function loadCrops() {
       try {
-        state.crops = await api('/crops');
+        const [crops, predictionsRes] = await Promise.all([
+          api('/crops'),
+          api('/predict/all')
+        ]);
+
+        const predsMap = {};
+        predictionsRes.predictions.forEach(p => {
+          predsMap[p.crop_id] = p;
+        });
+
+        state.crops = crops.map(c => {
+          const pred = predsMap[c.id];
+          return {
+            ...c,
+            predicted_yield: pred ? pred.predicted_yield : 0,
+            yield_unit: pred ? pred.yield_unit : 'tons/hectare',
+            confidence: pred ? pred.confidence : 100,
+            risk_level: pred ? pred.risk_level : 'low',
+            score: pred ? pred.score : 1
+          };
+        });
+
         renderCrops();
       } catch (err) {
         document.getElementById('crops-container').innerHTML = `
@@ -1496,15 +1666,74 @@
     }
 
     function renderCrops() {
-      document.getElementById('crops-container').innerHTML = state.crops.map(crop => `
-        <div class="crop-card ${state.selectedCrop === crop.id ? 'selected' : ''}"
-             data-crop="${crop.id}" onclick="selectCrop('${crop.id}')">
-          <div class="crop-emoji">${crop.emoji}</div>
-          <div class="crop-name">${crop.name}</div>
-          <div class="crop-season">${crop.season} Season</div>
-          <div class="crop-water">💧 ${crop.water_requirement} Water</div>
-        </div>
-      `).join('');
+      const filtered = state.crops.filter(crop => {
+        const matchesSeason = state.seasonFilter === 'all' || crop.season === state.seasonFilter;
+        const matchesRisk = state.riskFilter === 'all' || crop.risk_level === state.riskFilter;
+        return matchesSeason && matchesRisk;
+      });
+
+      const container = document.getElementById('crops-container');
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state" style="grid-column: 1 / -1; padding: 40px; text-align: center;">
+            <div class="empty-icon">📭</div>
+            <p>No crops match the selected filters</p>
+          </div>
+        `;
+      } else {
+        container.innerHTML = filtered.map(crop => `
+          <div class="crop-card ${state.selectedCrop === crop.id ? 'selected' : ''}"
+               data-crop="${crop.id}" onclick="selectCrop('${crop.id}')">
+            <div class="crop-emoji">${crop.emoji}</div>
+            <div class="crop-name">${crop.name}</div>
+            <div class="crop-season">${crop.season} Season</div>
+            <div class="crop-water">💧 ${crop.water_requirement} Water</div>
+            <div class="risk-badge ${crop.risk_level}" style="margin-top: 12px; margin-bottom: 0; padding: 4px 10px; font-size: 10px; display: inline-block;">
+              Risk: ${Math.round(100 - crop.confidence)}% (${crop.risk_level})
+            </div>
+          </div>
+        `).join('');
+      }
+
+      updateAverageRisk(filtered);
+    }
+
+    function updateAverageRisk(cropsList) {
+      const badge = document.getElementById('average-risk-badge');
+      const valueSpan = document.getElementById('avg-risk-value');
+      
+      if (cropsList.length === 0) {
+        valueSpan.textContent = 'N/A';
+        badge.style.background = 'rgba(255, 255, 255, 0.05)';
+        badge.style.borderColor = 'var(--glass-border)';
+        badge.style.color = 'var(--text-muted)';
+        return;
+      }
+
+      let totalRisk = 0;
+      cropsList.forEach(c => {
+        totalRisk += (100 - c.confidence);
+      });
+      const avgRisk = Math.round(totalRisk / cropsList.length);
+      valueSpan.textContent = `${avgRisk}%`;
+
+      if (avgRisk < 25) {
+        badge.style.background = 'rgba(6, 214, 160, 0.1)';
+        badge.style.borderColor = 'rgba(6, 214, 160, 0.2)';
+        badge.style.color = 'var(--accent-teal)';
+      } else if (avgRisk < 50) {
+        badge.style.background = 'rgba(255, 209, 102, 0.1)';
+        badge.style.borderColor = 'rgba(255, 209, 102, 0.2)';
+        badge.style.color = 'var(--accent-yellow)';
+      } else if (avgRisk < 75) {
+        badge.style.background = 'rgba(251, 133, 0, 0.1)';
+        badge.style.borderColor = 'rgba(251, 133, 0, 0.2)';
+        badge.style.color = 'var(--accent-orange)';
+      } else {
+        badge.style.background = 'rgba(239, 71, 111, 0.1)';
+        badge.style.borderColor = 'rgba(239, 71, 111, 0.2)';
+        badge.style.color = 'var(--accent-red)';
+      }
     }
 
     async function selectCrop(cropId) {
@@ -1521,7 +1750,7 @@
           body: JSON.stringify({ crop_id: cropId })
         });
 
-        const { predicted_yield, yield_unit, confidence, risk_level, risk_factors, score, cnn_trace, weather_used, model_info } = result;
+        const { predicted_yield, yield_unit, confidence, risk_level, risk_factors, score, cnn_trace, weather_used, model_info, fertilizers } = result;
         const confOffset = 314 - (314 * confidence / 100);
 
         panel.innerHTML = `
@@ -1555,6 +1784,31 @@
               <div>
                 ${risk_factors.map(f => `<div class="risk-factor">${f}</div>`).join('')}
               </div>
+            </div>
+          </div>
+
+          <!-- Fertilizer Recommendations -->
+          <div class="glass-card" style="margin-bottom: 24px;">
+            <div class="card-title" style="color: var(--accent-teal); display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <span>🧪</span> Recommended Fertilizers
+            </div>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+              Based on the crop requirements, these fertilizers are highly recommended for optimizing growth and maximizing predicted yield:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+              ${fertilizers.map((fert, idx) => `
+                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); padding: 16px; display: flex; align-items: center; gap: 14px; transition: var(--transition);" 
+                     onmouseover="this.style.borderColor='rgba(6, 214, 160, 0.3)'; this.style.background='rgba(6, 214, 160, 0.02)'" 
+                     onmouseout="this.style.borderColor='var(--glass-border)'; this.style.background='rgba(255, 255, 255, 0.02)'">
+                  <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(6, 214, 160, 0.1); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--accent-teal);">
+                    🧪
+                  </div>
+                  <div>
+                    <div style="font-size: 14px; font-weight: 600; color: var(--text-primary);">${fert}</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">Application Stage ${idx + 1}</div>
+                  </div>
+                </div>
+              `).join('')}
             </div>
           </div>
 
@@ -1858,6 +2112,17 @@
     // ══════════════════════════════════════════════════════════
     loadLocations();
     loadDashboard();
+
+    // Filter event listeners
+    document.getElementById('season-filter-select').addEventListener('change', (e) => {
+      state.seasonFilter = e.target.value;
+      renderCrops();
+    });
+
+    document.getElementById('risk-filter-select').addEventListener('change', (e) => {
+      state.riskFilter = e.target.value;
+      renderCrops();
+    });
 
     // Auto-refresh dashboard every 60s
     setInterval(() => {

@@ -19,6 +19,7 @@
         "soil_moisture_min": 50, "soil_moisture_max": 90
       },
       "yield_range": { "min": 2.5, "max": 7.5, "unit": "tons/hectare" },
+      "fertilizers": ["Urea (Nitrogen)", "DAP (Diammonium Phosphate)", "Muriate of Potash (MOP)", "Zinc Sulfate"],
       "cnn_weights": {
         "kernel": [0.35, 0.82, 0.75],
         "conv_bias": 0.08,
@@ -45,6 +46,7 @@
         "soil_moisture_min": 30, "soil_moisture_max": 60
       },
       "yield_range": { "min": 2.0, "max": 6.0, "unit": "tons/hectare" },
+      "fertilizers": ["Urea (Nitrogen)", "DAP (Diammonium Phosphate)", "Muriate of Potash (MOP)", "Elemental Sulfur"],
       "cnn_weights": {
         "kernel": [0.70, 0.30, 0.45],
         "conv_bias": 0.15,
@@ -71,6 +73,7 @@
         "soil_moisture_min": 40, "soil_moisture_max": 70
       },
       "yield_range": { "min": 3.0, "max": 9.0, "unit": "tons/hectare" },
+      "fertilizers": ["Urea (Nitrogen)", "NPK Complex (15-15-15)", "Zinc Sulfate", "DAP (Diammonium Phosphate)"],
       "cnn_weights": {
         "kernel": [0.55, 0.60, 0.50],
         "conv_bias": 0.10,
@@ -97,6 +100,7 @@
         "soil_moisture_min": 55, "soil_moisture_max": 85
       },
       "yield_range": { "min": 40, "max": 100, "unit": "tons/hectare" },
+      "fertilizers": ["Urea (Nitrogen)", "Single Superphosphate (SSP)", "Muriate of Potash (MOP)", "Zinc Sulfate"],
       "cnn_weights": {
         "kernel": [0.40, 0.78, 0.85],
         "conv_bias": 0.05,
@@ -123,6 +127,7 @@
         "soil_moisture_min": 35, "soil_moisture_max": 60
       },
       "yield_range": { "min": 1.0, "max": 3.5, "unit": "tons/hectare" },
+      "fertilizers": ["Urea (Nitrogen)", "DAP (Diammonium Phosphate)", "Muriate of Potash (MOP)", "Magnesium Sulfate"],
       "cnn_weights": {
         "kernel": [0.62, 0.40, 0.35],
         "conv_bias": 0.12,
@@ -149,11 +154,174 @@
         "soil_moisture_min": 40, "soil_moisture_max": 70
       },
       "yield_range": { "min": 1.0, "max": 3.5, "unit": "tons/hectare" },
+      "fertilizers": ["DAP (Diammonium Phosphate)", "Muriate of Potash (MOP)", "Ammonium Sulfate", "Rhizobium Biofertilizer"],
       "cnn_weights": {
         "kernel": [0.52, 0.65, 0.58],
         "conv_bias": 0.10,
         "dense_weights": [0.62, 0.55],
         "dense_bias": 0.16
+      }
+    },
+    {
+      "id": "chickpea",
+      "name": "Chickpea",
+      "emoji": "🫛",
+      "category": "Pulse",
+      "season": "Rabi",
+      "sowing_months": ["October", "November"],
+      "harvest_months": ["February", "March"],
+      "growth_duration_days": 110,
+      "water_requirement": "Low",
+      "description": "Nutritious and drought-tolerant legume. Thrives in cool weather and requires well-drained loam soils.",
+      "optimal": {
+        "temp_min": 15, "temp_max": 30,
+        "humidity_min": 30, "humidity_max": 60,
+        "rainfall_min": 20, "rainfall_max": 80,
+        "wind_max": 20,
+        "soil_moisture_min": 25, "soil_moisture_max": 50
+      },
+      "yield_range": { "min": 1.2, "max": 3.0, "unit": "tons/hectare" },
+      "fertilizers": ["DAP (Diammonium Phosphate)", "Single Superphosphate (SSP)", "Ammonium Sulfate", "Rhizobium Biofertilizer"],
+      "cnn_weights": {
+        "kernel": [0.60, 0.45, 0.55],
+        "conv_bias": 0.12,
+        "dense_weights": [0.58, 0.62],
+        "dense_bias": 0.15
+      }
+    },
+    {
+      "id": "mustard",
+      "name": "Mustard",
+      "emoji": "🌼",
+      "category": "Oilseed",
+      "season": "Rabi",
+      "sowing_months": ["October", "November"],
+      "harvest_months": ["February", "March"],
+      "growth_duration_days": 115,
+      "water_requirement": "Low-Medium",
+      "description": "Important Rabi oilseed crop. Thrives in cool climate and requires clear weather during flowering.",
+      "optimal": {
+        "temp_min": 10, "temp_max": 26,
+        "humidity_min": 40, "humidity_max": 75,
+        "rainfall_min": 30, "rainfall_max": 90,
+        "wind_max": 22,
+        "soil_moisture_min": 30, "soil_moisture_max": 55
+      },
+      "yield_range": { "min": 1.0, "max": 2.5, "unit": "tons/hectare" },
+      "fertilizers": ["Urea (Nitrogen)", "Single Superphosphate (SSP)", "Gypsum (Sulfur)", "Borax"],
+      "cnn_weights": {
+        "kernel": [0.68, 0.35, 0.50],
+        "conv_bias": 0.14,
+        "dense_weights": [0.52, 0.64],
+        "dense_bias": 0.18
+      }
+    },
+    {
+      "id": "groundnut",
+      "name": "Groundnut",
+      "emoji": "🥜",
+      "category": "Oilseed",
+      "season": "Kharif",
+      "sowing_months": ["June", "July"],
+      "harvest_months": ["October", "November"],
+      "growth_duration_days": 120,
+      "water_requirement": "Medium",
+      "description": "Underground pod legume. Requires warm temperatures, sandy loam soils, and moderate rainfall.",
+      "optimal": {
+        "temp_min": 22, "temp_max": 35,
+        "humidity_min": 50, "humidity_max": 80,
+        "rainfall_min": 50, "rainfall_max": 160,
+        "wind_max": 25,
+        "soil_moisture_min": 35, "soil_moisture_max": 65
+      },
+      "yield_range": { "min": 1.5, "max": 4.0, "unit": "tons/hectare" },
+      "fertilizers": ["Single Superphosphate (SSP)", "Gypsum", "Ammonium Sulfate", "Urea (Nitrogen)"],
+      "cnn_weights": {
+        "kernel": [0.54, 0.62, 0.52],
+        "conv_bias": 0.10,
+        "dense_weights": [0.60, 0.58],
+        "dense_bias": 0.16
+      }
+    },
+    {
+      "id": "moong_dal",
+      "name": "Moong Dal",
+      "emoji": "🟢",
+      "category": "Pulse",
+      "season": "Zaid",
+      "sowing_months": ["March", "April"],
+      "harvest_months": ["May", "June"],
+      "growth_duration_days": 70,
+      "water_requirement": "Low",
+      "description": "Short-duration summer pulse crop. Highly drought-tolerant and enriches soil nitrogen.",
+      "optimal": {
+        "temp_min": 25, "temp_max": 42,
+        "humidity_min": 30, "humidity_max": 60,
+        "rainfall_min": 15, "rainfall_max": 60,
+        "wind_max": 30,
+        "soil_moisture_min": 20, "soil_moisture_max": 45
+      },
+      "yield_range": { "min": 0.8, "max": 2.0, "unit": "tons/hectare" },
+      "fertilizers": ["DAP (Diammonium Phosphate)", "Muriate of Potash (MOP)", "Rhizobium Biofertilizer", "Trichoderma Biofungicide"],
+      "cnn_weights": {
+        "kernel": [0.48, 0.70, 0.60],
+        "conv_bias": 0.08,
+        "dense_weights": [0.68, 0.50],
+        "dense_bias": 0.12
+      }
+    },
+    {
+      "id": "tomato",
+      "name": "Tomato",
+      "emoji": "🍅",
+      "category": "Vegetable",
+      "season": "Zaid",
+      "sowing_months": ["February", "March"],
+      "harvest_months": ["May", "June"],
+      "growth_duration_days": 90,
+      "water_requirement": "Medium",
+      "description": "Warm-season vegetable requiring plentiful sunshine and uniform moisture. Susceptible to frost.",
+      "optimal": {
+        "temp_min": 18, "temp_max": 32,
+        "humidity_min": 45, "humidity_max": 75,
+        "rainfall_min": 40, "rainfall_max": 120,
+        "wind_max": 20,
+        "soil_moisture_min": 40, "soil_moisture_max": 70
+      },
+      "yield_range": { "min": 15.0, "max": 40.0, "unit": "tons/hectare" },
+      "fertilizers": ["Calcium Nitrate", "NPK Complex (10-26-26)", "Urea (Nitrogen)", "Epsom Salt (Magnesium Sulfate)"],
+      "cnn_weights": {
+        "kernel": [0.58, 0.55, 0.48],
+        "conv_bias": 0.11,
+        "dense_weights": [0.62, 0.52],
+        "dense_bias": 0.16
+      }
+    },
+    {
+      "id": "potato",
+      "name": "Potato",
+      "emoji": "🥔",
+      "category": "Vegetable",
+      "season": "Rabi",
+      "sowing_months": ["October", "November"],
+      "harvest_months": ["January", "February"],
+      "growth_duration_days": 100,
+      "water_requirement": "Medium",
+      "description": "Starchy tuber crop. Prefers cool night temperatures, moderate daytime heat, and loose loamy soils.",
+      "optimal": {
+        "temp_min": 12, "temp_max": 24,
+        "humidity_min": 50, "humidity_max": 80,
+        "rainfall_min": 30, "rainfall_max": 100,
+        "wind_max": 20,
+        "soil_moisture_min": 45, "soil_moisture_max": 75
+      },
+      "yield_range": { "min": 15.0, "max": 35.0, "unit": "tons/hectare" },
+      "fertilizers": ["NPK Blend (10-20-20)", "Muriate of Potash (MOP)", "Urea (Nitrogen)", "DAP (Diammonium Phosphate)"],
+      "cnn_weights": {
+        "kernel": [0.65, 0.42, 0.48],
+        "conv_bias": 0.13,
+        "dense_weights": [0.55, 0.65],
+        "dense_bias": 0.19
       }
     }
   ]

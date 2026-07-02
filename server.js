@@ -514,7 +514,8 @@ app.get('/api/crops', (req, res) => {
     growth_duration_days: c.growth_duration_days,
     water_requirement: c.water_requirement,
     description: c.description,
-    yield_range: c.yield_range
+    yield_range: c.yield_range,
+    fertilizers: c.fertilizers
   }));
   res.json({ success: true, data: crops });
 });
@@ -548,6 +549,7 @@ app.post('/api/predict', (req, res) => {
     success: true,
     data: {
       ...prediction,
+      fertilizers: crop.fertilizers,
       weather_used: weatherInput,
       model_info: {
         type: 'Simulated 1D-CNN',
